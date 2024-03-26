@@ -12,7 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install and run Spectral CI
+      id: spectral_scan
       uses: spectralops/spectral-github-action@v3
       with:
         spectral-dsn: ${{ env.SPECTRAL_DSN }}
-        spectral-args: scan --ok  --include-tags base,audit --json-v2 test123.json
+        spectral-args: scan --ok --include-tags base,audit --json-v2 test123.json
+
+    # Upload scan results as artifact
+    - name: Upload scan results
+      if: ${{ success() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: spectral-scan-results
+        path: test123.json
