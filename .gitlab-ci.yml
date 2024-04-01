@@ -1,0 +1,33 @@
+stages:
+
+test
+
+ 
+
+spectral:
+
+ stage: test
+
+ image: debian:12
+
+ variables:
+
+  SPECTRAL_KEY: "spu-STRIPPED"
+
+  SPECTRAL_DSN: "https://${SPECTRAL_KEY}@app.spectralops.io"
+
+ script:
+
+set -eu
+
+apt update
+
+apt install -y curl git
+
+curl -L -o /tmp/spectral-installer 
+
+https://app.spectralops.io/latest/x/sh?key=$SPECTRAL_KEY
+
+sh /tmp/spectral-installer -b /usr/local/bin
+
+spectral scan --include-tags base,audit3,iac
