@@ -1,0 +1,97 @@
+# Spectral
+# 
+# Here's a result run of the initial configuration, placed in '.spectral/'
+#
+# $ spectral
+#
+# [sample] ------------- summary -------------
+# [sample] AWS0001 - No AWS secrets in python files.
+# sp
+# - /../spectral/src/sp.py (AKIA223)
+# [sample] total 8 byte(s), 1 file(s), 1 match(es) in 14ms
+#
+#
+
+
+# you can omit the reporter section entirely (you'll get a stylish reporter by default)
+reporter:
+    # uncomment to show match results (recommended to not leave 
+    # this on because it shows everyone sensitive stuff)
+    # show_match: true
+
+    # useful for shipping logs to SIEM or other tools, pick the 'log: { json: true}' logger
+    # verbosity: verbose  
+    outputs:
+        stylish: {}         # nice looking CLI reports
+        # stylish: { html: "output.html" }  # produce HTML reports
+        # stylish: { csv: "output.csv" }  # produce CSV reports
+
+        # log:              # use a logger
+        #   json: true      # enable JSON logging
+        #   file: out.json  # put output in a file
+
+        # log: {}          # Just timestamped logs of results
+        # junit: {}        # Great for integrating with CI systems that understand JUnit XML (all of them, probably)
+        # sarif: { file: 'out.sarif' }        # output in standard SARIF format
+        # ignores: {}      # A reporter output that streams results as ignores
+        # command: {}      # Stream results into a command/binary of your own
+        # github: {}       # Beta. Results appear on pull request and fail/pass a PR.
+        # clib: {}         # Beta. Results are IPC'd to a C-lib compiled library
+        # github: {}       # Print finding to STDOUT by github annotations format
+
+#
+# Ignoring Matches
+#
+# you can specify ignores for matches that you know exist
+# and acknowledge them, but you don't care about them for now.
+#
+# Everything is a regex, you can use any or all of the fields:
+# rule_id, rule_name, match_text, path.
+#
+# To get a fingerprint, run `spectral fingerprint --text YOUR-SECRET`
+#
+#
+# Uncomment the following to activate:
+#
+# match_ignores:
+#     ignores:
+#     - match_text: MYSQL_ROOT_PASSWORD
+#     - match_line_text: dev_value.*
+#     - rule_id: <rule id>
+#       rule_name: <rule name>
+#       match_text: <match text>
+#       path: <path>
+#       match_fingerprint: 79cdb7f2e0e4a96520304ff641f45f230be4f362a4a16c704730115a85fa545f
+
+
+
+projects:
+    sample:
+        project:
+            name: sample
+        input:
+            - local: .
+              name: sources
+            # you can add a few more. 
+            # everything is relative to working directory (where you run spectral from)
+            #
+            # - local: nteract/node_modules
+            #  name: nteract
+            #- local: vscode/node_modules
+            #  name: vscode
+        rules:
+            roots:
+            - rules      # folder(s) relative to this file
+            # cherry-pick rules for these roots
+            # include:
+            #    tags:
+            #    - node
+            #    ids: []
+            # exclude:
+            #    tags:
+            #    - node
+            #    ids: []
+
+    # add as many more projects as you like:
+    # all_pythons:
+      # ...
