@@ -1,0 +1,18 @@
+rules:
+  - id: SENS001
+    name: Sensitive SSH file
+    tags:
+      - base
+      - sensitive-files
+      - custom-rules
+    severity: high
+    applies_to:
+      - path: "(Pi). *_(rsa|dsa|ed25519|ecdsa)$"
+    description: An SSH-related sensitive file was found
+    pattern_group:
+      scope: file
+      patterns:
+        - pattern: .
+          pattern_type: regex
+      aggregate: or
+    recommendation_template: 'Please add sensitive files to your gitignore.'
