@@ -1,0 +1,3 @@
+"Finding","Start","End","Severity","Rule ID","Rule Description","Commit SHA","Fingerprint","Match Text","Line"
+"/Users/liorshory/test2.4/priv13/default.pem",0,0,"Medium","SENF005","Potential cryptographic key bundle file","","e9db5aef623dcbdf0388f753a7e0de55deb01bab50e0d16cb072a41609768eaa","",1
+"/Users/liorshory/test2.4/priv13/terraform.tfstate",0,0,"High","TF002","Visible terraform state file","","1f47bafea2def31ffe1274d9bf712fd5a3587b24eed508d290812d122351402d","",1

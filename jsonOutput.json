@@ -1,0 +1,158 @@
+{
+    "items": [
+        {
+            "commit_sha": "f4110c15a55e4208310b2f45e9e7c5a01e31b213",
+            "end_bytes": 31,
+            "finding": "TTT555",
+            "fingerprint": "fcb150384ac77abc6761726cda8ab2565c0b1969ac4233651d2ed9e0e2ce746f",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    31
+                ],
+                "start": [
+                    1,
+                    11
+                ]
+            },
+            "rule_desc": "Visible AWS Key",
+            "rule_id": "CLD001",
+            "rule_link": null,
+            "severity": "high",
+            "start_bytes": 11
+        },
+        {
+            "commit_sha": "14dc35ac973fbc0a1184ca5797f37ce3c93ab73d",
+            "end_bytes": 0,
+            "finding": "terraform.tfstate",
+            "fingerprint": "1f47bafea2def31ffe1274d9bf712fd5a3587b24eed508d290812d122351402d",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    1
+                ],
+                "start": [
+                    1,
+                    1
+                ]
+            },
+            "rule_desc": "Visible terraform state file",
+            "rule_id": "TF002",
+            "rule_link": null,
+            "severity": "high",
+            "start_bytes": 0
+        },
+        {
+            "commit_sha": "dd55cc192803766237bdfaa57b34ba05092c1c95",
+            "end_bytes": 0,
+            "finding": "default.pem",
+            "fingerprint": "e9db5aef623dcbdf0388f753a7e0de55deb01bab50e0d16cb072a41609768eaa",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    1
+                ],
+                "start": [
+                    1,
+                    1
+                ]
+            },
+            "rule_desc": "Potential cryptographic key bundle file",
+            "rule_id": "SENF005",
+            "rule_link": null,
+            "severity": "medium",
+            "start_bytes": 0
+        }
+    ],
+    "run_context": {
+        "actors": [
+            "liorsho@checkpoint.com"
+        ],
+        "asset_id": "git://github.com/LiorSho/priv13",
+        "asset_kind": "git",
+        "asset_mapping": null,
+        "asset_name": "LiorSho/priv13",
+        "asset_source": "github.com",
+        "asset_uri": "https://github.com/LiorSho/priv13",
+        "asset_variant": "main",
+        "batch_id": null,
+        "branch": "main",
+        "ci_job_id": null,
+        "dedup": false,
+        "dot_path": "/Users/liorshory/test2.4/priv13",
+        "engine_kinds": [
+            "secrets"
+        ],
+        "forensic": false,
+        "history_config": {
+            "commits": null,
+            "include_binary": false,
+            "max_file_limit": 50000000,
+            "parallel": null,
+            "refs": null,
+            "repo_path": ".",
+            "show_progress": false
+        },
+        "is_audit": false,
+        "is_nosend": false,
+        "is_ok": false,
+        "is_public_repo": null,
+        "logs_alias": null,
+        "logs_source": null,
+        "offline_license": false,
+        "repo": "https://github.com/LiorSho/priv13",
+        "run_config": {
+            "exclude_dot_git": true,
+            "max_file_limit": 1000000000,
+            "since_epoch": null
+        },
+        "s3_bucket": null,
+        "scan_type": "history",
+        "sha": "f4110c15a55e4208310b2f45e9e7c5a01e31b213",
+        "spectral_env": null,
+        "spectral_git_sha": "9e384a099743a1b78904a66d8e36216974106c94",
+        "spectral_integ": null,
+        "spectral_opt_profile": "release",
+        "spectral_test_mode": null,
+        "spectral_version": "1.10.233",
+        "system_arch": "x86_64",
+        "system_os": "macos",
+        "unstaged": false,
+        "with_branches": false
+    },
+    "stats": {
+        "duration": {
+            "nanos": 260297000,
+            "secs": 0
+        },
+        "engines": [
+            [
+                "secrets",
+                {
+                    "duration": {
+                        "nanos": 58128000,
+                        "secs": 0
+                    },
+                    "summary_format": "Content",
+                    "total_bytes_read": 6163,
+                    "total_files_read": 12
+                }
+            ]
+        ],
+        "match_count": 3,
+        "match_severity_count": {},
+        "matching_files": 0,
+        "started": {
+            "nanos_since_epoch": 579428000,
+            "secs_since_epoch": 1733143746
+        },
+        "total_bytes_read": 0,
+        "total_files_read": 0
+    }
+}

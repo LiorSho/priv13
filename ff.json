@@ -1,0 +1,209 @@
+{
+    "items": [
+        {
+            "commit_sha": null,
+            "end_bytes": 0,
+            "finding": "/Users/liorshory/test2.4/priv13/terraform.tfstate",
+            "fingerprint": "1f47bafea2def31ffe1274d9bf712fd5a3587b24eed508d290812d122351402d",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    1
+                ],
+                "start": [
+                    1,
+                    1
+                ]
+            },
+            "rule_desc": "Visible terraform state file",
+            "rule_id": "TF002",
+            "rule_link": null,
+            "severity": "high",
+            "start_bytes": 0
+        },
+        {
+            "commit_sha": null,
+            "end_bytes": 526,
+            "finding": "/Users/liorshory/test2.4/priv13/ff.json",
+            "fingerprint": "d624cdb5b20672fb13cfd48aa7676351e8cd473fe67c7b0ef63f12002fd7f0b3",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    526
+                ],
+                "start": [
+                    1,
+                    462
+                ]
+            },
+            "rule_desc": "Visible Token Audit",
+            "rule_id": "AUDIT003",
+            "rule_link": null,
+            "severity": "medium",
+            "start_bytes": 462
+        },
+        {
+            "commit_sha": null,
+            "end_bytes": 31,
+            "finding": "/Users/liorshory/test2.4/priv13/file29.10-3.py",
+            "fingerprint": "b0822c0413cb9c675f39e5e0e446f22cc443028e241eab0b9a76e0a466934bbc",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    31
+                ],
+                "start": [
+                    1,
+                    11
+                ]
+            },
+            "rule_desc": "Visible AWS Key",
+            "rule_id": "CLD001",
+            "rule_link": null,
+            "severity": "medium",
+            "start_bytes": 11
+        },
+        {
+            "commit_sha": null,
+            "end_bytes": 65,
+            "finding": "/Users/liorshory/test2.4/priv13/file29.10-3.py",
+            "fingerprint": "fcb150384ac77abc6761726cda8ab2565c0b1969ac4233651d2ed9e0e2ce746f",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    3,
+                    32
+                ],
+                "start": [
+                    3,
+                    12
+                ]
+            },
+            "rule_desc": "Visible AWS Key",
+            "rule_id": "CLD001",
+            "rule_link": null,
+            "severity": "medium",
+            "start_bytes": 45
+        },
+        {
+            "commit_sha": null,
+            "end_bytes": 0,
+            "finding": "/Users/liorshory/test2.4/priv13/default.pem",
+            "fingerprint": "e9db5aef623dcbdf0388f753a7e0de55deb01bab50e0d16cb072a41609768eaa",
+            "hint": null,
+            "match_text": null,
+            "position": {
+                "end": [
+                    1,
+                    1
+                ],
+                "start": [
+                    1,
+                    1
+                ]
+            },
+            "rule_desc": "Potential cryptographic key bundle file",
+            "rule_id": "SENF005",
+            "rule_link": null,
+            "severity": "medium",
+            "start_bytes": 0
+        }
+    ],
+    "run_context": {
+        "actors": [
+            "lior.shory@spectralops.io"
+        ],
+        "asset_id": "git://github.com/LiorSho/priv13",
+        "asset_kind": "git",
+        "asset_mapping": null,
+        "asset_name": "LiorSho/priv13",
+        "asset_source": "github.com",
+        "asset_uri": "https://github.com/LiorSho/priv13",
+        "asset_variant": "new29.10-2",
+        "batch_id": "a24b21f5-95e5-4e71-9101-6d7d8f0113bd",
+        "branch": "new29.10-2",
+        "ci_job_id": null,
+        "dedup": false,
+        "dot_path": "/Users/liorshory/test2.4/priv13",
+        "engine_kinds": [
+            "secrets",
+            "iac"
+        ],
+        "forensic": false,
+        "history_config": null,
+        "is_audit": false,
+        "is_nosend": false,
+        "is_ok": false,
+        "is_public_repo": null,
+        "logs_alias": null,
+        "logs_source": null,
+        "offline_license": false,
+        "repo": "https://github.com/LiorSho/priv13",
+        "run_config": {
+            "exclude_dot_git": true,
+            "max_file_limit": 1000000000,
+            "since_epoch": null
+        },
+        "s3_bucket": null,
+        "scan_type": "scan",
+        "sha": "1194a23bf1bbbea60dc0f62756353757b6598a1d",
+        "spectral_env": null,
+        "spectral_git_sha": "fac1974c87c63082409fc1e00691b612692ff9de",
+        "spectral_integ": null,
+        "spectral_opt_profile": "release",
+        "spectral_test_mode": null,
+        "spectral_version": "1.10.224",
+        "system_arch": "x86_64",
+        "system_os": "macos",
+        "unstaged": false,
+        "with_branches": true
+    },
+    "stats": {
+        "duration": {
+            "nanos": 353103000,
+            "secs": 0
+        },
+        "engines": [
+            [
+                "secrets",
+                {
+                    "duration": {
+                        "nanos": 24690000,
+                        "secs": 0
+                    },
+                    "summary_format": "Content",
+                    "total_bytes_read": 13282,
+                    "total_files_read": 9
+                }
+            ],
+            [
+                "iac",
+                {
+                    "duration": {
+                        "nanos": 13326918,
+                        "secs": 0
+                    },
+                    "summary_format": "IAC",
+                    "total_bytes_read": null,
+                    "total_files_read": 4
+                }
+            ]
+        ],
+        "match_count": 5,
+        "match_severity_count": {},
+        "matching_files": 0,
+        "started": {
+            "nanos_since_epoch": 752555000,
+            "secs_since_epoch": 1730962431
+        },
+        "total_bytes_read": 0,
+        "total_files_read": 0
+    }
+}
